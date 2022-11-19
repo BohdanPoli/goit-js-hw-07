@@ -18,8 +18,8 @@ ref.div.addEventListener("click", onClickImage);
 
 // Функція створення розмітки з об'єкта
 
-function createGalleryItemMarkup(object) {
-  return object
+function createGalleryItemMarkup(objectImage) {
+  return objectImage
     .map(({ preview, original, description }) => {
       return `<div class="gallery__item">
 <a class="gallery__link" href="${original}">
