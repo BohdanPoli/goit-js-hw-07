@@ -46,20 +46,20 @@ function onClickImage(e) {
     <img src="${e.target.dataset.source}" width="800" height="600">
 `,
     {
-      onShow: (instance) => {},
+      onShow: (instance) => {
+        document.addEventListener("keydown", close);
+      },
 
       onClose: (instance) => {},
     }
   );
 
   instance.show();
+
+  function close(e) {
+    console.log(e.code);
+    if (e.code === "Escape") {
+      instance.close();
+    }
+  }
 }
-
-// Не можу зробити окрему функцію для закриття по клавіші escape, та передати її в OnShow
-//Хотів в onClose додати removeIventListener
-
-// function close() {
-// if (e.code === "Escape") {
-// instance.close();
-// }
-// }
